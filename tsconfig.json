@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "allowUmdGlobalAccess": true,
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "skipLibCheck": true,
+    "preserveConstEnums": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "strictNullChecks": false,
+    "rootDirs": ["./src"],
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "strictPropertyInitialization": false
+  },
+  "include": ["src/**/*"]
+}
