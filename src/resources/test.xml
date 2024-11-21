@@ -1,0 +1,18 @@
+<Text class='bold'>bold text</Text>
+<Text class='italic'>italicized text</Text>
+<FormattedText htmlText='{text}'/}>
+<Text>blockquote
+crazy</Text>
+</FormattedText>
+<Text>code:CodeEditor editable='false' lineNumbers='false' language= value=code</Text>
+<ToolBar width='100%' height='1px'/}>
+<Text class='strikethrough'>The world is flat.</Text>
+<Text>I need to highlight these ==very important words==.</Text>
+<FormattedText htmlText='{text}'/}>
+<Text>mama mia                       haibiasds ,dds
+mama mia          haibiasds ,dds
+mama mia
+mama mia
+mama mia
+mama mia</Text>
+</FormattedText>
