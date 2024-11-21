@@ -12,7 +12,7 @@
     "strictNullChecks": false,
     "rootDirs": ["./src"],
     "outDir": "./dist",
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "strictPropertyInitialization": false
   },
   "include": ["src/**/*"]

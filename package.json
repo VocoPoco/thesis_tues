@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "description": "A SAPUI5 library for generating user-end documentation from a md file",
-  "main": "src/converter.ts",
   "scripts": {
-    "start": "node --no-warnings --loader ts-node/esm src/converter.ts"
+    "build": "tsc",
+    "start": "npm run build && node --no-warnings --loader ts-node/esm src/converter.js"
   },
   "keywords": [],
   "author": "",
