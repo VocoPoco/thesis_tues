@@ -1,7 +1,7 @@
 import { Root } from 'mdast';
 import remarkParse from 'remark-parse';
 import { unified } from 'unified';
-import FileManager from '../FileManager.js';
+import FileManager from '../utils/FileManager.js';
 import Converter from './Converter.js';
 
 class MarkdownToASTConverter extends Converter<string, Root> {

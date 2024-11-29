@@ -1,5 +1,5 @@
 import MarkdownToASTConverter from './converters/MarkdownToAST.js';
-import FileManager from './FileManager.js';
+import FileManager from './utils/FileManager.js';
 
 async function main() {
   const markdownContent = await FileManager.readFile(
