@@ -3,20 +3,39 @@
   "version": "1.0.0",
   "type": "module",
   "description": "A SAPUI5 library for generating user-end documentation from a md file",
-  "main": "src/converter.ts",
+  "main": "src/main.ts",
   "scripts": {
-    "start": "node --no-warnings --loader ts-node/esm src/converter.ts"
+    "build": "tsc",
+    "start": "npm run build && node dist/main.js",
+    "lint-fix": "eslint --fix .",
+    "lint": "eslint src"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@eslint/js": "^9.15.0",
     "@types/markdown-it": "^14.1.2",
     "@types/node": "^22.7.9",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.6.3"
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-typescript": "^18.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "globals": "^15.12.0",
+    "prettier": "^3.4.1",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.16.0"
   },
   "dependencies": {
-    "markdown-it": "^14.1.0"
+    "@types/unist": "^3.0.3",
+    "remark": "^15.0.1",
+    "remark-parse": "^9.0.0",
+    "unified": "^11.0.5"
   }
 }
