@@ -11,7 +11,7 @@ class ProcessorFactory {
       '<Text text="{value}" class="emphasis"/>',
     ), // TEMPORARY
     strong: new SpecialTextProcessor('<Text text="{value}" class="strong"/>'), // TEMPORARY
-    delete: new SpecialTextProcessor('<Text text="{value}" class="delete"/>'), // FIX: delete isnt a class of Text element
+    delete: new SpecialTextProcessor('<Text text="{value}" class="delete"/>'), // NEEDS FIX: delete isnt a class of Text element
   };
 
   public static getProcessor(type: string): Processor {
