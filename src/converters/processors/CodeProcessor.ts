@@ -1,5 +1,5 @@
 import { RootContent } from 'mdast';
-import Processor from './Processor';
+import Processor from './Processor.js';
 
 class CodeProcessor extends Processor {
   public constructProperties(node: RootContent): Record<string, string> {
