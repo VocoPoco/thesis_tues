@@ -1,6 +1,7 @@
 import { RootContent } from 'mdast';
 import CodeProcessor from './processors/CodeProcessor.js';
 import HeadingProcessor from './processors/HeadingProcessor.js';
+import ImageProcessor from './processors/ImageProcessor.js';
 import LinkProcessor from './processors/LinkProcessor.js';
 import Processor from './processors/Processor.js';
 import SpecialTextProcessor from './processors/SpecialTextProcessor.js';
@@ -21,7 +22,12 @@ class ProcessorFactory {
     code: new CodeProcessor(
       '<code:CodeEditor editable="false" lineNumbers="false" type="{lang}" value="{value}" />',
     ),
-    link: new LinkProcessor('<Link text="{value}" href="{url}" />'),
+    link: new LinkProcessor(
+      '<Link text="{value}" href="{url}" tooltip="{title}/>',
+    ),
+    image: new ImageProcessor(
+      '<Image src="{url}" alt="{alt}" tooltip="{title}"/>',
+    ),
     // list: '<List>{value}</List>',
     // listItem: '<StandardListItem>{value}</StandardListItem>',
 
