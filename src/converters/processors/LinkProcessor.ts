@@ -1,5 +1,5 @@
 import { Literal, Parent, RootContent } from 'mdast';
-import Processor from './Processor';
+import Processor from './Processor.js';
 
 class LinkProcessor extends Processor {
   public constructProperties(node: RootContent): Record<string, string> {

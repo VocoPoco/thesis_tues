@@ -1,5 +1,5 @@
 import { Literal, RootContent } from 'mdast';
-import Processor from './Processor';
+import Processor from './Processor.js';
 
 class TextProcessor extends Processor {
   public constructProperties(node: RootContent): Record<string, string> {
