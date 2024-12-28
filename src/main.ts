@@ -6,7 +6,7 @@ async function main() {
     'src/resources/md_example.md',
   );
   const mdConverter = new MarkdownToASTConverter();
-  const ast = mdConverter.convert(markdownContent);
+  const ast = await mdConverter.convert(markdownContent);
 
   await mdConverter.export(JSON.stringify(ast, null, 2));
 

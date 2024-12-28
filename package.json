@@ -33,9 +33,12 @@
     "typescript-eslint": "^8.16.0"
   },
   "dependencies": {
+    "@types/mdast": "^4.0.0",
     "@types/unist": "^3.0.3",
     "remark": "^15.0.1",
-    "remark-parse": "^9.0.0",
-    "unified": "^11.0.5"
+    "remark-gfm-configurable": "^1.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-stringify": "^11.0.0",
+    "unified": "^11.0.0"
   }
 }
