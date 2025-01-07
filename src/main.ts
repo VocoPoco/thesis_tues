@@ -1,3 +1,4 @@
+import ASTToSapui5XML from './converters/ASTToSapui5XML.js';
 import MarkdownToASTConverter from './converters/MarkdownToAST.js';
 import FileManager from './utils/FileManager.js';
 
@@ -5,11 +6,14 @@ async function main() {
   const markdownContent = await FileManager.readFile(
     'src/resources/md_example.md',
   );
-  const mdConverter = new MarkdownToASTConverter();
-  const ast = await mdConverter.convert(markdownContent);
+  const astConverter = new MarkdownToASTConverter();
+  const xmlConverter = new ASTToSapui5XML();
 
-  await mdConverter.export(JSON.stringify(ast, null, 2));
+  const ast = await astConverter.convert(markdownContent);
+  const xml = xmlConverter.convert(ast);
 
+  await astConverter.export(JSON.stringify(ast, null, 2));
+  await xmlConverter.export(xml);
   console.log('Conversion complete.');
 }
 
