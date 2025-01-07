@@ -17,9 +17,8 @@ class ASTToSapui5XML extends Converter<Root, string> {
     const queue: RootContent[] = [...content.children];
     let result = '';
 
-    while (queue.length > 0) {
-      const child = queue.shift() as RootContent;
-      result += this.convertChild(child);
+    for (const child of queue) {
+      result = `${result}${this.convertChild(child)}`;
     }
 
     return result;
