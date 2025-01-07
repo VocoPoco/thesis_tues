@@ -9,9 +9,9 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "baseUrl": ".",
-    "rootDir": "./src",
-    "outDir": "./dist"
+    "rootDir": "converter/src",
+    "outDir": "converter/dist"
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["converter/src/**/*"],
+  "exclude": ["converter/node_mconverter/distes", "dist"]
 }
