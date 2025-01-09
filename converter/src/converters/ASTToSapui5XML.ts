@@ -3,6 +3,27 @@ import FileManager from '../utils/FileManager.js';
 import Converter from './Converter.js';
 import ProcessorFactory from './ProcessorFactory.js';
 
+const TOP_LIP = `<mvc:View
+	controllerName="com.thesistues.ui5app.controller.Main"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:code="sap.ui.codeeditor"
+	core:require="{
+		formatter: 'com/thesistues/ui5app/model/formatter'
+	}">
+
+	<Page
+		title="{i18n>appTitle}"
+		id="page">
+		<content>`;
+
+const BOTTOM_LIP = `		</content>
+	</Page>
+
+</mvc:View>`;
+
 class ASTToSapui5XML extends Converter<Root, string> {
   private convertChild(node: RootContent): string {
     const processor = ProcessorFactory.getProcessor(node.type);
@@ -21,13 +42,13 @@ class ASTToSapui5XML extends Converter<Root, string> {
       result = `${result}${this.convertChild(child)}`;
     }
 
-    return result;
+    return `${TOP_LIP}${result}${BOTTOM_LIP}`;
   }
 
   public export(
     content: string,
-    dirname: string = 'src/resources',
-    filename: string = 'sapui5XML',
+    dirname: string = '../ui5-app/webapp/view',
+    filename: string = 'Main',
     format: string = 'view.xml',
   ): void {
     const filePath: string = `${dirname}/${filename}.${format}`;

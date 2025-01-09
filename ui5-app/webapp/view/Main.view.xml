@@ -12,9 +12,7 @@
 	<Page
 		title="{i18n>appTitle}"
 		id="page">
-		<content>
-			{content}
-		</content>
+		<content><Title level="H1" text="Headers"/><Title level="H1" text="h1 Heading 8-)"/><Title level="H2" text="h2 Heading"/><Title level="H3" text="h3 Heading"/><Title level="H4" text="h4 Heading"/><Title level="H5" text="h5 Heading"/><Title level="H6" text="h6 Heading"/><Text text="Alternatively, for H1 and H2, an underline-ish style:" /><Title level="H1" text="Alt-H1"/><Title level="H2" text="Alt-H2"/><Title level="H1" text="Emphasis"/><Text text="Emphasis, aka italics, with " /><Text text="asterisks" class="emphasis"/><Text text=" or " /><Text text="underscores" class="emphasis"/><Text text="." /><Text text="Strong emphasis, aka bold, with " /><Text text="asterisks" class="strong"/><Text text=" or " /><Text text="underscores" class="strong"/><Text text="." /><Text text="Combined emphasis with " /><Text text="asterisks and " class="strong"/><Text text="." /><Text text="Strikethrough uses two tildes. " /><Text text="Scratch this." /><Text text="This is bold text" class="strong"/><Text text="This is bold text" class="strong"/><Text text="This is italic text" class="emphasis"/><Text text="This is italic text" class="emphasis"/><Text text="Strikethrough" /><Text text="Emphasis, aka italics, with " /><Text text="asterisks" class="emphasis"/><Text text=" or " /><Text text="underscores" class="emphasis"/><Text text="." /><Text text="Strong emphasis, aka bold, with " /><Text text="asterisks" class="strong"/><Text text=" or " /><Text text="underscores" class="strong"/><Text text="." /><Text text="Combined emphasis with " /><Text text="asterisks and " class="strong"/><Text text="." /><Text text="Strikethrough uses two tildes. " /><Text text="Scratch this." />		</content>
 	</Page>
 
 </mvc:View>
