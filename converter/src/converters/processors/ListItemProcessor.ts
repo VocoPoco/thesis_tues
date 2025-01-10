@@ -9,6 +9,10 @@ class ListItemProcessor extends Processor {
     };
   }
 
+  protected shouldEscape(node: RootContent): boolean {
+    return false;
+  }
+
   private processChildren(node: Parent): string {
     const childrenContent = (node.children[0] as Parent).children
       .map((child) => {
