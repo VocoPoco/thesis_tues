@@ -1,7 +1,7 @@
 import { RootContent } from 'mdast';
-import CodeProcessor from './processors/CodeProcessor.js';
 import HeadingProcessor from './processors/HeadingProcessor.js';
 import ImageProcessor from './processors/ImageProcessor.js';
+import InlineCodeProcessor from './processors/InlineCodeProcessor.js';
 import LinkProcessor from './processors/LinkProcessor.js';
 import ListProcessor from './processors/ListProcessor.js';
 import Processor from './processors/Processor.js';
@@ -19,15 +19,18 @@ class ProcessorFactory {
     text: new TextProcessor('<Text text="{value}" />'),
     emphasis: new SpecialTextProcessor(
       '<FormattedText htmlText="&lt;em>My Column&lt;/em>" />',
-    ), // TEMPORARY
+    ),
     strong: new SpecialTextProcessor(
       '  <FormattedText htmlText="&lt;strong>My Column&lt;/strong>" />',
-    ), // TEMPORARY
+    ),
     delete: new SpecialTextProcessor(
       '  <FormattedText htmlText="&lt;s>My Column&lt;/s>" />',
-    ), // TEMPORARY
-    code: new CodeProcessor(
-      '<code:CodeEditor editable="false" lineNumbers="false" type="{lang}" value="{value}" />',
+    ),
+    // code: new CodeProcessor(
+    //   '<code:CodeEditor editable="false" lineNumbers="false" type="{lang}" value="{value}" />',
+    // ), doesn't work
+    inlineCode: new InlineCodeProcessor(
+      '<FormattedText htmlText="&lt;code&gt;{value}&lt;/code&gt;" />',
     ),
     thematicBreak: new StaticProcessor("<ToolBar width='100%' height='1px'/>"),
     link: new LinkProcessor(
@@ -45,7 +48,6 @@ class ProcessorFactory {
     */
 
     /* MORE ELEMENTS TO CONSIDER HANDLING
-    delete: new SpecialTextProcessor('<Text text="{value}" class="delete"/>'), // NEEDS FIX: delete isnt a class of Text element
     linkReference: new LinkReferenceProcessor(
       '<Link text="{value}" href="{url}" />',
       this.definitions,
