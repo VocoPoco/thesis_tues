@@ -13,13 +13,15 @@ class TableRowProcessor extends Processor {
         const processor = ProcessorFactory.getProcessor(
           (child as Parent).children[0].type,
         );
-        return processor
-          ? `<Column>
-                  <header>${processor.processPlaceholders((child as Parent).children[0])}</header>
-              </Column>`
-          : '';
+        return processor ? this.createColumn(processor, child) : '';
       })
       .join('\n');
+  }
+
+  private createColumn(processor: Processor, child: RootContent): string {
+    return `<Column>
+                  <header>${processor.processPlaceholders((child as Parent).children[0])}</header>
+              </Column>`;
   }
 
   public processDataCells(node: Parent): string {
@@ -34,11 +36,15 @@ class TableRowProcessor extends Processor {
       })
       .join('\n');
 
+    return this.createListItem(cells);
+  }
+
+  private createListItem(cells: string) {
     return `<ColumnListItem>
-                <cells>
-                    ${cells}
-                </cells>
-            </ColumnListItem>`;
+                  <cells>
+                      ${cells}
+                  </cells>
+              </ColumnListItem>`;
   }
 }
 
