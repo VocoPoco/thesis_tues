@@ -7,36 +7,40 @@ class TableRowProcessor extends Processor {
     return {};
   }
 
-  public processHeaderCells(node: Parent): string {
+  private processNodeChildren(
+    node: Parent,
+    processFn: (processor: Processor, childNode: RootContent) => string,
+  ): string {
     return node.children
       .map((child) => {
-        const processor = ProcessorFactory.getProcessor(
-          (child as Parent).children[0].type,
-        );
-        return processor ? this.createColumn(processor, child) : '';
+        const childNode = (child as Parent).children[0];
+        const childNodeType = childNode.type;
+        const processor = ProcessorFactory.getProcessor(childNodeType);
+        if (processor) {
+          return processFn(processor, childNode);
+        }
       })
       .join('\n');
+  }
+
+  public processHeaderCells(node: Parent): string {
+    return this.processNodeChildren(node, (processor, childNode) => {
+      return this.createColumn(processor, childNode);
+    });
+  }
+
+  public processDataCells(node: Parent): string {
+    const cells = this.processNodeChildren(node, (processor, childNode) => {
+      return processor.processPlaceholders(childNode);
+    });
+
+    return this.createListItem(cells);
   }
 
   private createColumn(processor: Processor, child: RootContent): string {
     return `<Column>
-                  <header>${processor.processPlaceholders((child as Parent).children[0])}</header>
-              </Column>`;
-  }
-
-  public processDataCells(node: Parent): string {
-    const cells = node.children
-      .map((child) => {
-        const processor = ProcessorFactory.getProcessor(
-          (child as Parent).children[0].type,
-        );
-        return processor
-          ? processor.processPlaceholders((child as Parent).children[0])
-          : '';
-      })
-      .join('\n');
-
-    return this.createListItem(cells);
+            <header>${processor.processPlaceholders(child)}</header>
+          </Column>`;
   }
 
   private createListItem(cells: string) {
