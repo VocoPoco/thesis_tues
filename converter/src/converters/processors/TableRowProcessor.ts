@@ -1,5 +1,5 @@
 import { Parent, RootContent } from 'mdast';
-import ProcessorFactory from '../ProcessorFactory.js';
+import ProcessorFactory from '../ASTProcessorFactory.js';
 import Processor from './Processor.js';
 
 class TableRowProcessor extends Processor {
