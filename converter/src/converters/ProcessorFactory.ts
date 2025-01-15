@@ -2,6 +2,7 @@ import { RootContent } from 'mdast';
 import HeadingProcessor from './processors/HeadingProcessor.js';
 import ImageProcessor from './processors/ImageProcessor.js';
 import LinkProcessor from './processors/LinkProcessor.js';
+import ListItemProcessor from './processors/ListItemProcessor.js';
 import ListProcessor from './processors/ListProcessor.js';
 import Processor from './processors/Processor.js';
 import SpecialTextProcessor from './processors/SpecialTextProcessor.js';
@@ -38,6 +39,7 @@ class ProcessorFactory {
       '<Image src="{url}" alt="{alt}" tooltip="{title}"/>',
     ),
     list: new ListProcessor('<List>{value}</List>'),
+    listItem: new ListItemProcessor('<CustomListItem>{value}</CustomListItem>'),
     table: new TableProcessor(
       '<Table><columns>{columns}</columns><items>{items}</items></Table>',
     ),
