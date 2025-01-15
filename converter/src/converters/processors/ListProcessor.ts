@@ -1,5 +1,5 @@
 import { Parent, RootContent } from 'mdast';
-import ListItemProcessor from './ListItemProcessor.js';
+import ProcessorFactory from '../ASTProcessorFactory.js';
 import Processor from './Processor.js';
 
 class ListProcessor extends Processor {
@@ -17,9 +17,7 @@ class ListProcessor extends Processor {
     return node.children
       .map((child) => {
         if (child.type === 'listItem') {
-          const processor = new ListItemProcessor(
-            '<CustomListItem>{value}</CustomListItem>',
-          );
+          const processor = ProcessorFactory.getProcessor('listItem');
           return processor.processPlaceholders(child);
         }
         return '';

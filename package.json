@@ -1,0 +1,13 @@
+{
+  "name": "thesis_tues",
+  "version": "1.0.0",
+  "description": "A SAPUI5 library for generating user-end documentation from a md file",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "start": "concurrently \"npm start --prefix converter\" \"npm start --prefix ui5-app\"",
+    "build": "npm run build:converter && npm run build:ui5"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

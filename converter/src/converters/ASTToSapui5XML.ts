@@ -1,7 +1,7 @@
 import { Parent, Root, RootContent } from 'mdast';
 import FileManager from '../utils/FileManager.js';
+import ProcessorFactory from './ASTProcessorFactory.js';
 import Converter from './Converter.js';
-import ProcessorFactory from './ProcessorFactory.js';
 
 const TOP_LIP = `<mvc:View
 	controllerName="com.thesistues.ui5app.controller.Main"
