@@ -42,7 +42,7 @@ class TableRowProcessor extends Processor {
   }
 
   private createListItem(cells: string) {
-    return `<ColumnListItem>cells>${cells}</cells></ColumnListItem>`;
+    return `<ColumnListItem><cells>${cells}</cells></ColumnListItem>`;
   }
 }
 
