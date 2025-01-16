@@ -1,7 +1,7 @@
 import { Parent, Root, RootContent } from 'mdast';
 import FileManager from '../utils/FileManager.js';
 import ProcessorFactory from './ASTProcessorFactory.js';
-import Converter from './Converter.js';
+import FormatProcessor from './processors/FormatProcessor.js';
 
 const TOP_LIP = `<mvc:View
 	controllerName="com.thesistues.ui5app.controller.Main"
@@ -24,25 +24,30 @@ const BOTTOM_LIP = `		</content>
 
 </mvc:View>`;
 
-class ASTToSapui5XML extends Converter<Root, string> {
-  private convertChild(node: RootContent): string {
+class ASTToSapui5XML {
+  private formatProcessor = FormatProcessor.Instance;
+
+  private convertChild(node: RootContent): void {
     const processor = ProcessorFactory.getProcessor(node.type);
+
     if (processor) {
-      return processor.processPlaceholders(node);
+      const result = processor.processPlaceholders(node);
+      const line = node.position?.start.line;
+      if (line !== undefined) {
+        this.formatProcessor.addTemplate(line, result);
+      }
+      return;
     }
+
     const children = 'children' in node ? (node as Parent).children || [] : [];
-    return children.map((child) => this.convertChild(child)).join('');
+    children.forEach((child) => this.convertChild(child));
   }
 
   public convert(content: Root): string {
-    const queue: RootContent[] = [...content.children];
-    let result = '';
+    content.children.forEach((child) => this.convertChild(child));
 
-    for (const child of queue) {
-      result = `${result}${this.convertChild(child)}`;
-    }
-
-    return `${TOP_LIP}${result}${BOTTOM_LIP}`;
+    const wrappedTemplates = this.formatProcessor.wrapTemplates();
+    return `${TOP_LIP}${wrappedTemplates.join('\n')}${BOTTOM_LIP}`;
   }
 
   public export(

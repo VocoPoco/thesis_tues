@@ -1,15 +1,15 @@
 import { RootContent } from 'mdast';
-import HeadingProcessor from './processors/HeadingProcessor.js';
-import ImageProcessor from './processors/ImageProcessor.js';
-import LinkProcessor from './processors/LinkProcessor.js';
-import ListItemProcessor from './processors/ListItemProcessor.js';
-import ListProcessor from './processors/ListProcessor.js';
-import Processor from './processors/Processor.js';
-import SpecialTextProcessor from './processors/SpecialTextProcessor.js';
-import StaticProcessor from './processors/StaticProcessor.js';
-import TableProcessor from './processors/TableProcessor.js';
-import TableRowProcessor from './processors/TableRowProcessor.js';
-import TextProcessor from './processors/TextProcessor.js';
+import HeadingProcessor from './processors/type/HeadingProcessor.js';
+import ImageProcessor from './processors/type/ImageProcessor.js';
+import LinkProcessor from './processors/type/LinkProcessor.js';
+import ListItemProcessor from './processors/type/ListItemProcessor.js';
+import ListProcessor from './processors/type/ListProcessor.js';
+import Processor from './processors/type/Processor.js';
+import SpecialTextProcessor from './processors/type/SpecialTextProcessor.js';
+import StaticProcessor from './processors/type/StaticProcessor.js';
+import TableProcessor from './processors/type/TableProcessor.js';
+import TableRowProcessor from './processors/type/TableRowProcessor.js';
+import TextProcessor from './processors/type/TextProcessor.js';
 
 class ProcessorFactory {
   private static definitions: Record<string, { url: string; title: string }> =

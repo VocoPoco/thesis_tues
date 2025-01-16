@@ -1,5 +1,5 @@
 import { Parent, RootContent } from 'mdast';
-import ProcessorFactory from '../ASTProcessorFactory.js';
+import ProcessorFactory from '../../ASTProcessorFactory.js';
 import Processor from './Processor.js';
 
 class ListProcessor extends Processor {
@@ -9,7 +9,7 @@ class ListProcessor extends Processor {
     };
   }
 
-  protected shouldEscape(node: RootContent): boolean {
+  protected shouldEscape(): boolean {
     return false;
   }
 
