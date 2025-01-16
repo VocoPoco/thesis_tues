@@ -8,6 +8,9 @@ class TableProcessor extends Processor {
   private items: string[] = [];
 
   public constructProperties(node: RootContent): Record<string, string> {
+    this.columns = [];
+    this.items = [];
+
     this.processChildren(node as Parent);
     return {
       columns: this.columns.join(''),

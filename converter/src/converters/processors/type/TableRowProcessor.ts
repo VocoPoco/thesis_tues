@@ -20,7 +20,7 @@ class TableRowProcessor extends Processor {
           return processFn(processor, childNode);
         }
       })
-      .join('\n');
+      .join('');
   }
 
   public processHeaderCells(node: Parent): string {
@@ -38,17 +38,11 @@ class TableRowProcessor extends Processor {
   }
 
   private createColumn(processor: Processor, child: RootContent): string {
-    return `<Column>
-            <header>${processor.processPlaceholders(child)}</header>
-          </Column>`;
+    return `<Column><header>${processor.processPlaceholders(child)}</header></Column>`;
   }
 
   private createListItem(cells: string) {
-    return `<ColumnListItem>
-                  <cells>
-                      ${cells}
-                  </cells>
-              </ColumnListItem>`;
+    return `<ColumnListItem>cells>${cells}/cells></ColumnListItem>`;
   }
 }
 
