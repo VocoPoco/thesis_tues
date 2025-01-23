@@ -1,9 +1,16 @@
 class FormatProcessor {
   private static _instance: FormatProcessor;
-  private templateMap: Map<number, string[]>;
+  private _templateMap: Map<number, string[]>;
+
+  public get templateMap(): Map<number, string[]> {
+    return this._templateMap;
+  }
+  public set templateMap(value: Map<number, string[]>) {
+    this._templateMap = value;
+  }
 
   private constructor() {
-    this.templateMap = new Map<number, string[]>();
+    this._templateMap = new Map<number, string[]>();
   }
 
   public static get Instance(): FormatProcessor {
@@ -11,28 +18,28 @@ class FormatProcessor {
   }
 
   public addTemplate(line: number, template: string): void {
-    if (!this.templateMap.has(line)) {
-      this.templateMap.set(line, []);
+    if (!this._templateMap.has(line)) {
+      this._templateMap.set(line, []);
     }
-    this.templateMap.get(line)?.push(template);
+    this._templateMap.get(line)?.push(template);
   }
 
   public getTemplates(line: number): string[] {
-    return this.templateMap.get(line) || [];
+    return this._templateMap.get(line) || [];
   }
 
   public getMap(): Map<number, string[]> {
-    return this.templateMap;
+    return this._templateMap;
   }
 
   public wrapTemplates(): string[] {
     const wrappedResults: string[] = [];
-    const keys = Array.from(this.templateMap.keys());
+    const keys = Array.from(this._templateMap.keys());
     const maxKey = Math.max(...keys);
 
     for (let i = 1; i <= maxKey; i++) {
-      if (this.templateMap.has(i)) {
-        const templates = this.templateMap.get(i)!.join('\n');
+      if (this._templateMap.has(i)) {
+        const templates = this._templateMap.get(i)!.join('\n');
         wrappedResults.push(`<HBox>${templates}</HBox>`);
       } else {
         wrappedResults.push('<Text text="‎"/>');
