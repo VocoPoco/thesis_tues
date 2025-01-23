@@ -1,5 +1,5 @@
 import { RootContent } from 'mdast';
-import escapeSpecialCharacters from '../../../utils/ProcessorUtils.js';
+import ProcessorUtils from '../../../utils/ProcessorUtils.js';
 
 abstract class Processor {
   constructor(protected template: string) {}
@@ -16,7 +16,9 @@ abstract class Processor {
     const properties = this.constructProperties(node);
 
     if ('value' in properties && this.shouldEscape()) {
-      properties.value = escapeSpecialCharacters(properties.value);
+      properties.value = ProcessorUtils.escapeSpecialCharacters(
+        properties.value,
+      );
     }
 
     return Object.entries(properties).reduce(

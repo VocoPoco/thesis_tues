@@ -1,7 +1,10 @@
 import { Parent, Root, RootContent } from 'mdast';
 import FileManager from '../utils/FileManager.js';
+import ProcessorUtils from '../utils/ProcessorUtils.js';
 import ProcessorFactory from './ASTProcessorFactory.js';
 import FormatProcessor from './processors/FormatProcessor.js';
+import DefinitionProcessor from './processors/type/DefinitionProcessor.js';
+import ReferenceProcessor from './processors/type/ReferenceProcessor.js';
 
 const TOP_LIP = `<mvc:View
 	controllerName="com.thesistues.ui5app.controller.Main"
@@ -45,6 +48,33 @@ class ASTToSapui5XML {
 
   public convert(content: Root): string {
     content.children.forEach((child) => this.convertChild(child));
+
+    const linkReferenceProcessor = ProcessorFactory.getProcessor(
+      'linkReference',
+    ) as ReferenceProcessor;
+    const imageReferenceProcessor = ProcessorFactory.getProcessor(
+      'imageReference',
+    ) as ReferenceProcessor;
+    const definitionProcessor = ProcessorFactory.getProcessor(
+      'definition',
+    ) as DefinitionProcessor;
+
+    console.log(
+      imageReferenceProcessor.lineMap,
+      definitionProcessor.definitions,
+      this.formatProcessor.templateMap,
+    );
+    ProcessorUtils.resolveReferences(
+      linkReferenceProcessor.lineMap,
+      definitionProcessor.definitions,
+      this.formatProcessor.templateMap,
+    );
+
+    ProcessorUtils.resolveReferences(
+      imageReferenceProcessor.lineMap,
+      definitionProcessor.definitions,
+      this.formatProcessor.templateMap,
+    );
 
     const wrappedTemplates = this.formatProcessor.wrapTemplates();
     return `${TOP_LIP}${wrappedTemplates.join('\n')}${BOTTOM_LIP}`;
