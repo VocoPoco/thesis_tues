@@ -1,5 +1,4 @@
 import { RootContent } from 'mdast';
-import ProcessorUtils from '../../../utils/ProcessorUtils.js';
 
 abstract class Processor {
   constructor(protected template: string) {}
@@ -12,13 +11,20 @@ abstract class Processor {
     node: RootContent,
   ): Record<string, string>;
 
+  private escapeSpecialCharacters(value: string): string {
+    return value
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
   public processPlaceholders(node: RootContent): string {
     const properties = this.constructProperties(node);
 
     if ('value' in properties && this.shouldEscape()) {
-      properties.value = ProcessorUtils.escapeSpecialCharacters(
-        properties.value,
-      );
+      properties.value = this.escapeSpecialCharacters(properties.value);
     }
 
     return Object.entries(properties).reduce(
