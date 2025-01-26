@@ -1,4 +1,3 @@
-// tests/type/LinkProcessor.test.ts
 import LinkProcessor from '../../src/converters/processors/type/LinkProcessor';
 
 describe('LinkProcessor', () => {

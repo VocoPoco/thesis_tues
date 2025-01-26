@@ -1,4 +1,3 @@
-// tests/type/ListProcessor.test.ts
 import ProcessorFactory from '../../src/converters/ASTProcessorFactory';
 import ListItemProcessor from '../../src/converters/processors/type/ListItemProcessor';
 import ListProcessor from '../../src/converters/processors/type/ListProcessor';

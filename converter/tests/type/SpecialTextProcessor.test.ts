@@ -1,4 +1,3 @@
-// tests/type/SpecialTextProcessor.test.ts
 import SpecialTextProcessor from '../../src/converters/processors/type/SpecialTextProcessor';
 
 describe('SpecialTextProcessor', () => {

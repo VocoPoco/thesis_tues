@@ -1,4 +1,3 @@
-// tests/type/ImageProcessor.test.ts
 import ImageProcessor from '../../src/converters/processors/type/ImageProcessor';
 
 describe('ImageProcessor', () => {

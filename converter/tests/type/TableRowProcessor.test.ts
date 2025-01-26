@@ -1,4 +1,3 @@
-// tests/type/TableRowProcessor.test.ts
 import ProcessorFactory from '../../src/converters/ASTProcessorFactory';
 import TableRowProcessor from '../../src/converters/processors/type/TableRowProcessor';
 import TextProcessor from '../../src/converters/processors/type/TextProcessor';
