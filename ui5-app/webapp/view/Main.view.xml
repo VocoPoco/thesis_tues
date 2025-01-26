@@ -12,7 +12,699 @@
 	<Page
 		title="{i18n>appTitle}"
 		id="page">
-		<content><Title level="H1" text="Headers"/><Title level="H1" text="h1 Heading 8-)"/><Title level="H2" text="h2 Heading"/><Title level="H3" text="h3 Heading"/><Title level="H4" text="h4 Heading"/><Title level="H5" text="h5 Heading"/><Title level="H6" text="h6 Heading"/><Text text="Alternatively, for H1 and H2, an underline-ish style:" /><Title level="H1" text="Alt-H1"/><Title level="H2" text="Alt-H2"/><Title level="H1" text="Emphasis"/><Text text="Emphasis, aka italics, with " /><Text text="asterisks" class="emphasis"/><Text text=" or " /><Text text="underscores" class="emphasis"/><Text text="." /><Text text="Strong emphasis, aka bold, with " /><Text text="asterisks" class="strong"/><Text text=" or " /><Text text="underscores" class="strong"/><Text text="." /><Text text="Combined emphasis with " /><Text text="asterisks and " class="strong"/><Text text="." /><Text text="Strikethrough uses two tildes. " /><Text text="Scratch this." /><Text text="This is bold text" class="strong"/><Text text="This is bold text" class="strong"/><Text text="This is italic text" class="emphasis"/><Text text="This is italic text" class="emphasis"/><Text text="Strikethrough" /><Text text="Emphasis, aka italics, with " /><Text text="asterisks" class="emphasis"/><Text text=" or " /><Text text="underscores" class="emphasis"/><Text text="." /><Text text="Strong emphasis, aka bold, with " /><Text text="asterisks" class="strong"/><Text text=" or " /><Text text="underscores" class="strong"/><Text text="." /><Text text="Combined emphasis with " /><Text text="asterisks and " class="strong"/><Text text="." /><Text text="Strikethrough uses two tildes. " /><Text text="Scratch this." />		</content>
+		<content><HBox><Title level="H1" text="Headers"/></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><Title level="H1" text="h1 Heading 8-)"/></HBox>
+<Text text="‎"/>
+<HBox><Title level="H2" text="h2 Heading"/></HBox>
+<Text text="‎"/>
+<HBox><Title level="H3" text="h3 Heading"/></HBox>
+<Text text="‎"/>
+<HBox><Title level="H4" text="h4 Heading"/></HBox>
+<Text text="‎"/>
+<HBox><Title level="H5" text="h5 Heading"/></HBox>
+<Text text="‎"/>
+<HBox><Title level="H6" text="h6 Heading"/></HBox>
+<Text text="‎"/>
+<HBox><Text text="Alternatively, for H1 and H2, an underline-ish style:" /></HBox>
+<Text text="‎"/>
+<HBox><Title level="H1" text="Alt-H1"/></HBox>
+<Text text="‎"/>
+<HBox><Title level="H2" text="Alt-H2"/></HBox>
+<Text text="‎"/>
+<HBox><ToolBar width='100%' height='1px'/></HBox>
+<Text text="‎"/>
+<HBox><Title level="H1" text="Emphasis"/></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><Text text="Emphasis, aka italics, with " />
+<FormattedText htmlText="&lt;em>My Column&lt;/em>" />
+<Text text=" or " />
+<FormattedText htmlText="&lt;em>My Column&lt;/em>" />
+<Text text="." /></HBox>
+<Text text="‎"/>
+<HBox><Text text="Strong emphasis, aka bold, with " />
+  <FormattedText htmlText="&lt;strong>My Column&lt;/strong>" />
+<Text text=" or " />
+  <FormattedText htmlText="&lt;strong>My Column&lt;/strong>" />
+<Text text="." /></HBox>
+<Text text="‎"/>
+<HBox><Text text="Combined emphasis with " />
+  <FormattedText htmlText="&lt;strong>My Column&lt;/strong>" />
+<Text text="." /></HBox>
+<Text text="‎"/>
+<HBox><Text text="Strikethrough uses two tildes. " />
+  <FormattedText htmlText="&lt;s>My Column&lt;/s>" /></HBox>
+<Text text="‎"/>
+<HBox>  <FormattedText htmlText="&lt;strong>My Column&lt;/strong>" /></HBox>
+<Text text="‎"/>
+<HBox>  <FormattedText htmlText="&lt;strong>My Column&lt;/strong>" /></HBox>
+<Text text="‎"/>
+<HBox><FormattedText htmlText="&lt;em>My Column&lt;/em>" /></HBox>
+<Text text="‎"/>
+<HBox><FormattedText htmlText="&lt;em>My Column&lt;/em>" /></HBox>
+<Text text="‎"/>
+<HBox>  <FormattedText htmlText="&lt;s>My Column&lt;/s>" /></HBox>
+<Text text="‎"/>
+<HBox><ToolBar width='100%' height='1px'/></HBox>
+<Text text="‎"/>
+<HBox><Title level="H1" text="Lists"/></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><List><CustomListItem><HBox><Text text="First ordered list item" /></HBox></CustomListItem>
+<CustomListItem><HBox><Text text="Another item
+⋅⋅* Unordered sub-list." /></HBox></CustomListItem>
+<CustomListItem><HBox><Text text="Actual numbers don&#39;t matter, just that it&#39;s a number
+⋅⋅1. Ordered sub-list" /></HBox></CustomListItem>
+<CustomListItem><HBox><Text text="And another item." /></HBox></CustomListItem></List></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><Text text="⋅⋅⋅You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we&#39;ll use three here to also align the raw Markdown)." /></HBox>
+<Text text="‎"/>
+<HBox><Text text="⋅⋅⋅To have a line break without a paragraph, you will need to use two trailing spaces.⋅⋅
+⋅⋅⋅Note that this line is separate, but within the same paragraph.⋅⋅
+⋅⋅⋅(This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)" /></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><List><CustomListItem><HBox><Text text="Unordered list can use asterisks" /></HBox></CustomListItem></List></HBox>
+<Text text="‎"/>
+<HBox><List><CustomListItem><HBox><Text text="Or minuses" /></HBox></CustomListItem></List></HBox>
+<Text text="‎"/>
+<HBox><List><CustomListItem><HBox><Text text="Or pluses" /></HBox></CustomListItem></List></HBox>
+<Text text="‎"/>
+<HBox><List><CustomListItem><HBox><Text text="Make my changes" /></HBox></CustomListItem>
+<CustomListItem><HBox><Text text="Push my commits to GitHub" /></HBox></CustomListItem>
+<CustomListItem><HBox><Text text="Open a pull request" /></HBox></CustomListItem></List></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><List><CustomListItem><HBox><Text text="Create a list by starting a line with " /><Text text=", " /><Text text=", or " /></HBox></CustomListItem>
+<CustomListItem><HBox><Text text="Sub-lists are made by indenting 2 spaces:" /></HBox></CustomListItem>
+<CustomListItem><HBox><Text text="Very easy!" /></HBox></CustomListItem></List></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><ToolBar width='100%' height='1px'/></HBox>
+<Text text="‎"/>
+<HBox><Title level="H1" text="Task lists"/></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><List><CustomListItem><HBox><Text text="Finish my changes" /></HBox></CustomListItem>
+<CustomListItem><HBox><Text text="Push my commits to GitHub" /></HBox></CustomListItem>
+<CustomListItem><HBox><Text text="Open a pull request" /></HBox></CustomListItem>
+<CustomListItem><HBox><Text text="@mentions, #refs, " /><Link text="links" href="" tooltip=""/><Text text=", " />  <FormattedText htmlText="&lt;strong>My Column&lt;/strong>" /><Text text=", and " /><Text text="tags" /><Text text=" supported" /></HBox></CustomListItem>
+<CustomListItem><HBox><Text text="list syntax required (any unordered or ordered list supported)" /></HBox></CustomListItem>
+<CustomListItem><HBox><Text text="this is a complete item" /></HBox></CustomListItem>
+<CustomListItem><HBox><Text text="this is an incomplete item" /></HBox></CustomListItem></List></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><ToolBar width='100%' height='1px'/></HBox>
+<Text text="‎"/>
+<HBox><Title level="H1" text="Ignoring Markdown formatting"/></HBox>
+<Text text="‎"/>
+<HBox><Text text="You can tell GitHub to ignore (or escape) Markdown formatting by using \ before the Markdown character." /></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><Text text="Let&#39;s rename *our-new-project* to *our-old-project*." /></HBox>
+<Text text="‎"/>
+<HBox><ToolBar width='100%' height='1px'/></HBox>
+<Text text="‎"/>
+<HBox><Title level="H1" text="Links"/></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><Link text="I&#39;m an inline-style link" href="https://www.google.com" tooltip=""/></HBox>
+<Text text="‎"/>
+<HBox><Link text="I&#39;m an inline-style link with title" href="https://www.google.com" tooltip="Google's Homepage"/></HBox>
+<Text text="‎"/>
+<HBox><Link text="I&#39;m a reference-style link" href="https://www.mozilla.org" /></HBox>
+<Text text="‎"/>
+<HBox><Link text="I&#39;m a relative reference to a repository file" href="../blob/master/LICENSE" tooltip=""/></HBox>
+<Text text="‎"/>
+<HBox><Link text="You can use numbers for reference-style link definitions" href="http://slashdot.org" /></HBox>
+<Text text="‎"/>
+<HBox><Text text="Or leave it empty and use the " />
+<Link text="link text itself" href="http://www.reddit.com" />
+<Text text="." /></HBox>
+<Text text="‎"/>
+<HBox><Text text="URLs and URLs in angle brackets will automatically get turned into links.
+" /></HBox>
+<HBox><Link text="http://www.example.com" href="http://www.example.com" tooltip=""/>
+<Text text=" or " />
+<Link text="http://www.example.com" href="http://www.example.com" tooltip=""/>
+<Text text=" and sometimes
+example.com (but not on Github, for example)." /></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><Text text="Some text to show that the reference links can follow later." /></HBox>
+<Text text="‎"/>
+<HBox></HBox>
+<HBox></HBox>
+<HBox></HBox>
+<Text text="‎"/>
+<HBox><ToolBar width='100%' height='1px'/></HBox>
+<Text text="‎"/>
+<HBox><Title level="H1" text="Images"/></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><Text text="Here&#39;s our logo (hover to see the title text):" /></HBox>
+<Text text="‎"/>
+<HBox><Text text="Inline-style:
+" /></HBox>
+<HBox><Image src="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png" alt="alt text" tooltip="Logo Title Text 1"/></HBox>
+<Text text="‎"/>
+<HBox><Text text="Reference-style:
+" /></HBox>
+<HBox><Link text="alt text" href="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png" /></HBox>
+<Text text="‎"/>
+<HBox></HBox>
+<Text text="‎"/>
+<HBox><Image src="https://octodex.github.com/images/minion.png" alt="Minion" tooltip=""/>
+<Text text="
+" /></HBox>
+<HBox><Image src="https://octodex.github.com/images/stormtroopocat.jpg" alt="Stormtroopocat" tooltip="The Stormtroopocat"/></HBox>
+<Text text="‎"/>
+<HBox><Text text="Like links, Images also have a footnote style syntax" /></HBox>
+<Text text="‎"/>
+<HBox><Link text="Alt text" href="https://octodex.github.com/images/dojocat.jpg" /></HBox>
+<Text text="‎"/>
+<HBox><Text text="With a reference later in the document defining the URL location:" /></HBox>
+<Text text="‎"/>
+<HBox></HBox>
+<Text text="‎"/>
+<HBox><ToolBar width='100%' height='1px'/></HBox>
+<Text text="‎"/>
+<HBox><Title level="H1" text=""/></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><Text text="Footnote 1 link" />
+<Text text="." /></HBox>
+<Text text="‎"/>
+<HBox><Text text="Footnote 2 link" />
+<Text text="." /></HBox>
+<Text text="‎"/>
+<HBox><Text text="Inline footnote^[Text of inline footnote] definition." /></HBox>
+<Text text="‎"/>
+<HBox><Text text="Duplicated footnote reference" />
+<Text text="." /></HBox>
+<Text text="‎"/>
+<HBox><Text text="Footnote " />
+  <FormattedText htmlText="&lt;strong>My Column&lt;/strong>" /></HBox>
+<Text text="‎"/>
+<HBox><Text text="and multiple paragraphs." /></HBox>
+<Text text="‎"/>
+<HBox><Text text="Footnote text." /></HBox>
+<Text text="‎"/>
+<HBox><ToolBar width='100%' height='1px'/></HBox>
+<Text text="‎"/>
+<HBox><Title level="H1" text="Code and Syntax Highlighting"/></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><Text text="Inline " />
+<Text text=" has " />
+<Text text=" it." /></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><ToolBar width='100%' height='1px'/></HBox>
+<Text text="‎"/>
+<HBox><Title level="H1" text="Tables"/></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><Text text="Colons can be used to align columns." /></HBox>
+<Text text="‎"/>
+<HBox><Table><columns><Column><header><Text text="Tables" /></header></Column><Column><header><Text text="Are" /></header></Column><Column><header><Text text="Cool" /></header></Column></columns><items><ColumnListItem><cells><Text text="col 3 is" /><Text text="right-aligned" /><Text text="$1600" /></cells></ColumnListItem><ColumnListItem><cells><Text text="col 2 is" /><Text text="centered" /><Text text="$12" /></cells></ColumnListItem><ColumnListItem><cells><Text text="zebra stripes" /><Text text="are neat" /><Text text="$1" /></cells></ColumnListItem></items></Table></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><Text text="There must be at least 3 dashes separating each header cell.
+The outer pipes (|) are optional, and you don&#39;t need to make the
+raw Markdown line up prettily. You can also use inline Markdown." /></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><Table><columns><Column><header><Text text="Markdown" /></header></Column><Column><header><Text text="Less" /></header></Column><Column><header><Text text="Pretty" /></header></Column></columns><items><ColumnListItem><cells><FormattedText htmlText="&lt;em>My Column&lt;/em>" />  <FormattedText htmlText="&lt;strong>My Column&lt;/strong>" /></cells></ColumnListItem><ColumnListItem><cells><Text text="1" /><Text text="2" /><Text text="3" /></cells></ColumnListItem></items></Table></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><Table><columns><Column><header><Text text="First Header" /></header></Column><Column><header><Text text="Second Header" /></header></Column></columns><items><ColumnListItem><cells><Text text="Content Cell" /><Text text="Content Cell" /></cells></ColumnListItem><ColumnListItem><cells><Text text="Content Cell" /><Text text="Content Cell" /></cells></ColumnListItem></items></Table></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><Table><columns><Column><header><Text text="Command" /></header></Column><Column><header><Text text="Description" /></header></Column></columns><items><ColumnListItem><cells><Text text="git status" /><Text text="List all new or modified files" /></cells></ColumnListItem><ColumnListItem><cells><Text text="git diff" /><Text text="Show file differences that haven&#39;t been staged" /></cells></ColumnListItem></items></Table></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><Table><columns><Column><header><Text text="Command" /></header></Column><Column><header><Text text="Description" /></header></Column></columns><items><ColumnListItem><cells><Text text="List all " /></cells></ColumnListItem><ColumnListItem><cells><Text text="Show file differences that " /></cells></ColumnListItem></items></Table></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><Table><columns><Column><header><Text text="Left-aligned" /></header></Column><Column><header><Text text="Center-aligned" /></header></Column><Column><header><Text text="Right-aligned" /></header></Column></columns><items><ColumnListItem><cells><Text text="git status" /><Text text="git status" /><Text text="git status" /></cells></ColumnListItem><ColumnListItem><cells><Text text="git diff" /><Text text="git diff" /><Text text="git diff" /></cells></ColumnListItem></items></Table></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><Table><columns><Column><header><Text text="Name" /></header></Column><Column><header><Text text="Character" /></header></Column></columns><items><ColumnListItem><cells><Text text="Backtick" /><Text text="`" /></cells></ColumnListItem><ColumnListItem><cells><Text text="Pipe" /><Text text="|" /></cells></ColumnListItem></items></Table></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><ToolBar width='100%' height='1px'/></HBox>
+<Text text="‎"/>
+<HBox><Title level="H1" text="Blockquotes"/></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><Text text="Blockquotes are very handy in email to emulate reply text.
+This line is part of the same quote." /></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><Text text="Quote break." /></HBox>
+<Text text="‎"/>
+<HBox><Text text="This is a very long line that will still be quoted properly when it wraps. Oh boy let&#39;s keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can " />
+<FormattedText htmlText="&lt;em>My Column&lt;/em>" />
+<Text text=" " />
+  <FormattedText htmlText="&lt;strong>My Column&lt;/strong>" />
+<Text text=" into a blockquote." /></HBox>
+<Text text="‎"/>
+<HBox><Text text="Blockquotes can also be nested..." /></HBox>
+<Text text="‎"/>
+<HBox><Text text="...by using additional greater-than signs right next to each other..." /></HBox>
+<Text text="‎"/>
+<HBox><Text text="...or with spaces between arrows." /></HBox>
+<Text text="‎"/>
+<HBox><ToolBar width='100%' height='1px'/></HBox>
+<Text text="‎"/>
+<HBox><Title level="H1" text="Inline HTML"/></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><ToolBar width='100%' height='1px'/></HBox>
+<Text text="‎"/>
+<HBox><Title level="H1" text="Horizontal Rules"/></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><Text text="Three or more..." /></HBox>
+<Text text="‎"/>
+<HBox><ToolBar width='100%' height='1px'/></HBox>
+<Text text="‎"/>
+<HBox><Text text="Hyphens" /></HBox>
+<Text text="‎"/>
+<HBox><ToolBar width='100%' height='1px'/></HBox>
+<Text text="‎"/>
+<HBox><Text text="Asterisks" /></HBox>
+<Text text="‎"/>
+<HBox><ToolBar width='100%' height='1px'/></HBox>
+<Text text="‎"/>
+<HBox><Text text="Underscores" /></HBox>
+<Text text="‎"/>
+<HBox><ToolBar width='100%' height='1px'/></HBox>
+<Text text="‎"/>
+<HBox><Title level="H1" text="YouTube Videos"/></HBox>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<Text text="‎"/>
+<HBox><Link text="" href="https://www.youtube.com/watch?v=ciawICBvQoE" tooltip=""/></HBox>		</content>
 	</Page>
 
 </mvc:View>

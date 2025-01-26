@@ -27,3 +27,21 @@ By configuring the extensions option, you can import modules without specifying 
 [arbitrary case-insensitive reference text]: https://www.mozilla.org
 
 [I'm a reference-style link][Arbitrary case-insensitive reference text]
+
+TABLES NEED TO HANDLE DIFFERENT TYPES AFTER THE LINE MMODIFICATION BECAUSE IT BREAKS.
+
+- if there is a type that i do not support (linkReferece, footnote, imageReference) in the tables, the whole conversion breaks - NEEDS FIXING
+
+WORK LEFT TO DO:
+
+- fix languages in codeEditor because some are configured different between markdown and sapui5 for instance (c# (.md) == csharp)
+- tests
+- navigation menu (optional)
+
+run tests with:
+jest --selectProjects unit
+jest --selectProjects integration
+jest --selectProjects e2e
+
+or all tests with:
+jest
