@@ -1,5 +1,5 @@
 import { Parent, RootContent } from 'mdast';
-import ProcessorFactory from '../ASTProcessorFactory.js';
+import ProcessorFactory from '../../ASTProcessorFactory.js';
 import Processor from './Processor.js';
 import TableRowProcessor from './TableRowProcessor.js';
 
@@ -8,6 +8,9 @@ class TableProcessor extends Processor {
   private items: string[] = [];
 
   public constructProperties(node: RootContent): Record<string, string> {
+    this.columns = [];
+    this.items = [];
+
     this.processChildren(node as Parent);
     return {
       columns: this.columns.join(''),

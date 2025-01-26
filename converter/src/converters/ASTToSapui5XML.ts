@@ -1,7 +1,10 @@
 import { Parent, Root, RootContent } from 'mdast';
 import FileManager from '../utils/FileManager.js';
+import ProcessorUtils from '../utils/ProcessorUtils.js';
 import ProcessorFactory from './ASTProcessorFactory.js';
-import Converter from './Converter.js';
+import FormatProcessor from './processors/FormatProcessor.js';
+import DefinitionProcessor from './processors/type/DefinitionProcessor.js';
+import ReferenceProcessor from './processors/type/ReferenceProcessor.js';
 
 const TOP_LIP = `<mvc:View
 	controllerName="com.thesistues.ui5app.controller.Main"
@@ -24,25 +27,57 @@ const BOTTOM_LIP = `		</content>
 
 </mvc:View>`;
 
-class ASTToSapui5XML extends Converter<Root, string> {
-  private convertChild(node: RootContent): string {
+class ASTToSapui5XML {
+  private formatProcessor = FormatProcessor.Instance;
+
+  private convertChild(node: RootContent): void {
     const processor = ProcessorFactory.getProcessor(node.type);
+
     if (processor) {
-      return processor.processPlaceholders(node);
+      const result = processor.processPlaceholders(node);
+      const line = node.position?.start.line;
+      if (line !== undefined) {
+        this.formatProcessor.addTemplate(line, result);
+      }
+      return;
     }
+
     const children = 'children' in node ? (node as Parent).children || [] : [];
-    return children.map((child) => this.convertChild(child)).join('');
+    children.forEach((child) => this.convertChild(child));
   }
 
   public convert(content: Root): string {
-    const queue: RootContent[] = [...content.children];
-    let result = '';
+    content.children.forEach((child) => this.convertChild(child));
 
-    for (const child of queue) {
-      result = `${result}${this.convertChild(child)}`;
-    }
+    const linkReferenceProcessor = ProcessorFactory.getProcessor(
+      'linkReference',
+    ) as ReferenceProcessor;
+    const imageReferenceProcessor = ProcessorFactory.getProcessor(
+      'imageReference',
+    ) as ReferenceProcessor;
+    const definitionProcessor = ProcessorFactory.getProcessor(
+      'definition',
+    ) as DefinitionProcessor;
 
-    return `${TOP_LIP}${result}${BOTTOM_LIP}`;
+    console.log(
+      imageReferenceProcessor.lineMap,
+      definitionProcessor.definitions,
+      this.formatProcessor.templateMap,
+    );
+    ProcessorUtils.resolveReferences(
+      linkReferenceProcessor.lineMap,
+      definitionProcessor.definitions,
+      this.formatProcessor.templateMap,
+    );
+
+    ProcessorUtils.resolveReferences(
+      imageReferenceProcessor.lineMap,
+      definitionProcessor.definitions,
+      this.formatProcessor.templateMap,
+    );
+
+    const wrappedTemplates = this.formatProcessor.wrapTemplates();
+    return `${TOP_LIP}${wrappedTemplates.join('\n')}${BOTTOM_LIP}`;
   }
 
   public export(

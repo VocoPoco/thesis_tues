@@ -1,33 +1,31 @@
-import { RootContent } from 'mdast';
-import HeadingProcessor from './processors/HeadingProcessor.js';
-import ImageProcessor from './processors/ImageProcessor.js';
-import LinkProcessor from './processors/LinkProcessor.js';
-import ListItemProcessor from './processors/ListItemProcessor.js';
-import ListProcessor from './processors/ListProcessor.js';
-import Processor from './processors/Processor.js';
-import SpecialTextProcessor from './processors/SpecialTextProcessor.js';
-import StaticProcessor from './processors/StaticProcessor.js';
-import TableProcessor from './processors/TableProcessor.js';
-import TableRowProcessor from './processors/TableRowProcessor.js';
-import TextProcessor from './processors/TextProcessor.js';
+import DefinitionProcessor from './processors/type/DefinitionProcessor.js';
+import HeadingProcessor from './processors/type/HeadingProcessor.js';
+import ImageProcessor from './processors/type/ImageProcessor.js';
+import ImageReferenceProcessor from './processors/type/ImageReferenceProcessor.js';
+import LinkProcessor from './processors/type/LinkProcessor.js';
+import LinkReferenceProcessor from './processors/type/LinkReferenceProcessor.js';
+import ListItemProcessor from './processors/type/ListItemProcessor.js';
+import ListProcessor from './processors/type/ListProcessor.js';
+import Processor from './processors/type/Processor.js';
+import SpecialTextProcessor from './processors/type/SpecialTextProcessor.js';
+import StaticProcessor from './processors/type/StaticProcessor.js';
+import TableProcessor from './processors/type/TableProcessor.js';
+import TableRowProcessor from './processors/type/TableRowProcessor.js';
+import TextProcessor from './processors/type/TextProcessor.js';
 
 class ProcessorFactory {
-  private static definitions: Record<string, { url: string; title: string }> =
-    {};
-  private static pendingReferences: Record<string, RootContent[]> = {};
-
   private static processors: Record<string, Processor> = {
     heading: new HeadingProcessor('<Title level="{depth}" text="{value}"/>'),
     text: new TextProcessor('<Text text="{value}" />'),
     emphasis: new SpecialTextProcessor(
       '<FormattedText htmlText="&lt;em>My Column&lt;/em>" />',
-    ), // TEMPORARY
+    ),
     strong: new SpecialTextProcessor(
       '  <FormattedText htmlText="&lt;strong>My Column&lt;/strong>" />',
-    ), // TEMPORARY
+    ),
     delete: new SpecialTextProcessor(
       '  <FormattedText htmlText="&lt;s>My Column&lt;/s>" />',
-    ), // TEMPORARY
+    ),
     // code: new CodeProcessor(
     //   '<code:CodeEditor editable="false" lineNumbers="false" type="{lang}" value="{value}" />',
     // ),
@@ -44,24 +42,13 @@ class ProcessorFactory {
       '<Table><columns>{columns}</columns><items>{items}</items></Table>',
     ),
     tableRow: new TableRowProcessor(''),
-
-    /* MORE ELEMENTS TO CONSIDER HANDLING
-    delete: new SpecialTextProcessor('<Text text="{value}" class="delete"/>'), // NEEDS FIX: delete isnt a class of Text element
+    imageReference: new ImageReferenceProcessor(
+      '<Link text="{value}" href="{url}" />',
+    ),
     linkReference: new LinkReferenceProcessor(
       '<Link text="{value}" href="{url}" />',
-      this.definitions,
-      this.pendingReferences,
     ),
-    definition: new LinkReferenceProcessor(
-      '<Link text="{value}" href="{url}" />',
-      this.definitions,
-      this.pendingReferences,
-    ),
-    // definition: ,
-    // inlineCode: ,
-    // footnoteDefinition: ,
-    // footnoteReference: ,
-    */
+    definition: new DefinitionProcessor(''),
   };
 
   public static getProcessor(type: string): Processor {
