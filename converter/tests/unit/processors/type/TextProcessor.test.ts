@@ -1,4 +1,4 @@
-import TextProcessor from '../../src/converters/processors/type/TextProcessor';
+import TextProcessor from '../../../../src/converters/processors/type/TextProcessor';
 
 describe('TextProcessor', () => {
   let processor: TextProcessor;

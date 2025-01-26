@@ -1,4 +1,4 @@
-import SpecialTextProcessor from '../../src/converters/processors/type/SpecialTextProcessor';
+import SpecialTextProcessor from '../../../../src/converters/processors/type/SpecialTextProcessor';
 
 describe('SpecialTextProcessor', () => {
   let processor: SpecialTextProcessor;
