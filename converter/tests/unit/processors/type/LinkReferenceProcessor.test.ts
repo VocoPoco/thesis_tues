@@ -1,4 +1,4 @@
-import LinkReferenceProcessor from '../../../../src/converters/processors/type/LinkReferenceProcessor';
+import LinkReferenceProcessor from '@src/converters/processors/type/LinkReferenceProcessor';
 
 describe('LinkReferenceProcessor', () => {
   let processor: LinkReferenceProcessor;

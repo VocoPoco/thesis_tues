@@ -1,6 +1,6 @@
-import ProcessorFactory from '../../../../src/converters/ASTProcessorFactory';
-import TableProcessor from '../../../../src/converters/processors/type/TableProcessor';
-import TableRowProcessor from '../../../../src/converters/processors/type/TableRowProcessor';
+import ProcessorFactory from '@src/converters/ASTProcessorFactory';
+import TableProcessor from '@src/converters/processors/type/TableProcessor';
+import TableRowProcessor from '@src/converters/processors/type/TableRowProcessor';
 
 describe('TableProcessor', () => {
   let processor: TableProcessor;

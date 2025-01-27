@@ -1,6 +1,6 @@
-import ProcessorFactory from '../../../../src/converters/ASTProcessorFactory';
-import ListItemProcessor from '../../../../src/converters/processors/type/ListItemProcessor';
-import ListProcessor from '../../../../src/converters/processors/type/ListProcessor';
+import ProcessorFactory from '@src/converters/ASTProcessorFactory';
+import ListItemProcessor from '@src/converters/processors/type/ListItemProcessor';
+import ListProcessor from '@src/converters/processors/type/ListProcessor';
 
 describe('ListProcessor', () => {
   let processor: ListProcessor;

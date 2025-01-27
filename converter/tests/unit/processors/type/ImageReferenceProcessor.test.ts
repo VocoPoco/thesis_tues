@@ -1,4 +1,4 @@
-import ImageReferenceProcessor from '../../../../src/converters/processors/type/ImageReferenceProcessor';
+import ImageReferenceProcessor from '@src/converters/processors/type/ImageReferenceProcessor';
 
 describe('ImageReferenceProcessor', () => {
   let processor: ImageReferenceProcessor;

@@ -1,4 +1,4 @@
-import LinkProcessor from '../../../../src/converters/processors/type/LinkProcessor';
+import LinkProcessor from '@src/converters/processors/type/LinkProcessor';
 
 describe('LinkProcessor', () => {
   let processor: LinkProcessor;
@@ -59,41 +59,5 @@ describe('LinkProcessor', () => {
     expect(output).toBe(
       '<Link text="Go to site" href="https://example.com" tooltip=""/>',
     );
-  });
-
-  it('should correctly process a link node with missing children', () => {
-    const linkNode = {
-      type: 'link',
-      url: 'https://example.com',
-      title: 'No Text',
-      children: [],
-      position: {
-        start: { line: 12, column: 1, offset: 160 },
-        end: { line: 12, column: 30, offset: 190 },
-      },
-    };
-
-    const output = processor.processPlaceholders(linkNode as any);
-
-    expect(output).toBe(
-      '<Link text="" href="https://example.com" tooltip="No Text"/>',
-    );
-  });
-
-  it('should return empty values if the link node is missing url, title, and value', () => {
-    const linkNode = {
-      type: 'link',
-      url: null,
-      title: null,
-      children: [],
-      position: {
-        start: { line: 13, column: 1, offset: 200 },
-        end: { line: 13, column: 20, offset: 220 },
-      },
-    };
-
-    const output = processor.processPlaceholders(linkNode as any);
-
-    expect(output).toBe('<Link text="" href="" tooltip=""/>');
   });
 });

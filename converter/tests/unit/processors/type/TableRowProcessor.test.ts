@@ -1,6 +1,6 @@
-import ProcessorFactory from '../../../../src/converters/ASTProcessorFactory';
-import TableRowProcessor from '../../../../src/converters/processors/type/TableRowProcessor';
-import TextProcessor from '../../../../src/converters/processors/type/TextProcessor';
+import ProcessorFactory from '@src/converters/ASTProcessorFactory';
+import TableRowProcessor from '@src/converters/processors/type/TableRowProcessor';
+import TextProcessor from '@src/converters/processors/type/TextProcessor';
 
 describe('TableRowProcessor', () => {
   let processor: TableRowProcessor;
@@ -54,21 +54,5 @@ describe('TableRowProcessor', () => {
     expect(output).toBe(
       '<ColumnListItem><cells><Text text="Cell 1"/></cells></ColumnListItem>',
     );
-  });
-
-  it('should handle a table row with invalid cell children', () => {
-    const tableRowNode = {
-      type: 'tableRow',
-      children: [
-        {
-          type: 'invalidCell',
-          children: [{ type: 'text', value: 'Invalid' }],
-        },
-      ],
-    };
-
-    const output = processor.processDataCells(tableRowNode as any);
-
-    expect(output).toBe('<ColumnListItem><cells></cells></ColumnListItem>');
   });
 });

@@ -1,4 +1,4 @@
-import DefinitionProcessor from '../../../../src/converters/processors/type/DefinitionProcessor';
+import DefinitionProcessor from '@src/converters/processors/type/DefinitionProcessor';
 
 describe('DefinitionProcessor', () => {
   let processor: DefinitionProcessor;

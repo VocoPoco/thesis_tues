@@ -1,5 +1,4 @@
-// tests/utils/FormatProcessor.test.ts
-import FormatProcessor from '../../../src/converters/processors/FormatProcessor';
+import FormatProcessor from '@src/converters/processors/FormatProcessor';
 
 describe('FormatProcessor', () => {
   let processor: FormatProcessor;

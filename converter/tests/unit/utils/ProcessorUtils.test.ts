@@ -1,4 +1,4 @@
-import ProcessorUtils from '../../../src/utils/ProcessorUtils';
+import ProcessorUtils from '@src/utils/ProcessorUtils';
 
 describe('resolveReferences', () => {
   it('should correctly resolve references and update templates with URLs', () => {

@@ -1,4 +1,4 @@
-import HeadingProcessor from '../../../../src/converters/processors/type/HeadingProcessor';
+import HeadingProcessor from '@src/converters/processors/type/HeadingProcessor';
 
 describe('HeadingProcessor', () => {
   let processor: HeadingProcessor;
