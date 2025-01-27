@@ -1,6 +1,6 @@
 import { Parent, Root, RootContent } from 'mdast';
 import FileManager from '../utils/FileManager.js';
-import ProcessorUtils from '../utils/ProcessorUtils.js';
+import ProcessorUtils from './../utils/ProcessorUtils.js';
 import ProcessorFactory from './ASTProcessorFactory.js';
 import FormatProcessor from './processors/FormatProcessor.js';
 import DefinitionProcessor from './processors/type/DefinitionProcessor.js';
@@ -59,11 +59,6 @@ class ASTToSapui5XML {
       'definition',
     ) as DefinitionProcessor;
 
-    console.log(
-      imageReferenceProcessor.lineMap,
-      definitionProcessor.definitions,
-      this.formatProcessor.templateMap,
-    );
     ProcessorUtils.resolveReferences(
       linkReferenceProcessor.lineMap,
       definitionProcessor.definitions,
