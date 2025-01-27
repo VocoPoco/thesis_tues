@@ -1,5 +1,5 @@
 import { Parent, RootContent } from 'mdast';
-import ProcessorFactory from '../../ASTProcessorFactory.js';
+import ProcessorFactory from './../../ASTProcessorFactory.js';
 import Processor from './Processor.js';
 
 class ListItemProcessor extends Processor {
@@ -14,6 +14,15 @@ class ListItemProcessor extends Processor {
   }
 
   private processChildren(node: Parent): string {
+    if (!node.children || node.children.length === 0) {
+      return '<HBox></HBox>';
+    }
+
+    const firstChild = node.children[0] as Parent;
+    if (!firstChild.children || firstChild.children.length === 0) {
+      return '<HBox></HBox>';
+    }
+
     const childrenContent = (node.children[0] as Parent).children
       .map((child) => {
         const processor = ProcessorFactory.getProcessor(child.type);
