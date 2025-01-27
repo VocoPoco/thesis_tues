@@ -18,16 +18,8 @@ describe('LinkProcessor', () => {
         {
           type: 'text',
           value: 'Click here',
-          position: {
-            start: { line: 10, column: 5, offset: 105 },
-            end: { line: 10, column: 15, offset: 115 },
-          },
         },
       ],
-      position: {
-        start: { line: 10, column: 1, offset: 100 },
-        end: { line: 10, column: 30, offset: 130 },
-      },
     };
 
     const output = processor.processPlaceholders(linkNode as any);
@@ -58,6 +50,69 @@ describe('LinkProcessor', () => {
 
     expect(output).toBe(
       '<Link text="Go to site" href="https://example.com" tooltip=""/>',
+    );
+  });
+
+  it('should handle a link node with `url` and `title` being null', () => {
+    const linkNode = {
+      type: 'link',
+      url: null,
+      title: null,
+      children: [
+        {
+          type: 'text',
+          value: 'Broken link',
+        },
+      ],
+    };
+
+    const output = processor.processPlaceholders(linkNode as any);
+
+    expect(output).toBe('<Link text="Broken link" href="" tooltip=""/>');
+  });
+
+  it('should handle a link node with `children` being null', () => {
+    const linkNode = {
+      type: 'link',
+      url: 'https://example.com',
+      title: 'Example Title',
+      children: null,
+    };
+
+    const output = processor.processPlaceholders(linkNode as any);
+
+    expect(output).toBe(
+      '<Link text="" href="https://example.com" tooltip="Example Title"/>',
+    );
+  });
+
+  it('should handle a link node with an empty `children` array', () => {
+    const linkNode = {
+      type: 'link',
+      url: 'https://example.com',
+      title: 'Example Title',
+      children: [],
+    };
+
+    const output = processor.processPlaceholders(linkNode as any);
+
+    expect(output).toBe(
+      '<Link text="" href="https://example.com" tooltip="Example Title"/>',
+    );
+  });
+
+  it('should handle a link node with invalid children structure', () => {
+    const linkNode = {
+      type: 'link',
+      url: 'https://example.com',
+      title: 'Example Title',
+      children: [{ type: 'paragraph', children: [] }],
+    };
+
+    const output = processor.processPlaceholders(linkNode as any);
+
+    expect(output).toBe(
+      '<Link text="" href="https://example.com" tooltip="Example Title"/>',
     );
   });
 });
