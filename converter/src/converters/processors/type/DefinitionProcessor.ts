@@ -17,7 +17,7 @@ class DefinitionProcessor extends Processor {
     const identifier = 'identifier' in node ? node.identifier : '';
     const url = 'url' in node ? node.url : '';
 
-    if (identifier) {
+    if (identifier && !this._definitions.has(identifier)) {
       this._definitions.set(identifier, url);
     }
 
