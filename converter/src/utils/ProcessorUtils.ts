@@ -31,7 +31,7 @@ function _updateTemplatesWithUrl(
   url: string,
 ): string[] {
   return lineTemplates.map((template) => {
-    if (template.includes('<Link')) {
+    if (template.includes('{url}')) {
       return template.replace('{url}', url);
     }
     return template;
