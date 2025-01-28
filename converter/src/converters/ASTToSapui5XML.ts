@@ -1,37 +1,34 @@
-import { Parent, Root, RootContent } from 'mdast';
-import FileManager from '../utils/FileManager.js';
+import { Root, RootContent } from 'mdast';
+import { XML_TEMPLATE } from '../templates/xmlTemplate.js';
 import ProcessorUtils from './../utils/ProcessorUtils.js';
 import ProcessorFactory from './ASTProcessorFactory.js';
+import Converter from './Converter.js';
 import FormatProcessor from './processors/FormatProcessor.js';
 import DefinitionProcessor from './processors/type/DefinitionProcessor.js';
 import ReferenceProcessor from './processors/type/ReferenceProcessor.js';
 
-const TOP_LIP = `<mvc:View
-	controllerName="com.thesistues.ui5app.controller.Main"
-	displayBlock="true"
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:core="sap.ui.core"
-	xmlns:code="sap.ui.codeeditor"
-	core:require="{
-		formatter: 'com/thesistues/ui5app/model/formatter'
-	}">
+/**
+ * Converts an AST (Abstract Syntax Tree) into SAPUI5 XML format.
+ */
+class ASTToSapui5XML extends Converter<Root, string> {
+  private readonly formatProcessor: FormatProcessor;
+  private readonly processorFactory: typeof ProcessorFactory;
 
-	<Page
-		title="{i18n>appTitle}"
-		id="page">
-		<content>`;
+  constructor(
+    formatProcessor?: FormatProcessor,
+    processorFactory?: typeof ProcessorFactory,
+  ) {
+    super();
+    this.formatProcessor = formatProcessor ?? FormatProcessor.Instance;
+    this.processorFactory = processorFactory ?? ProcessorFactory;
+  }
 
-const BOTTOM_LIP = `		</content>
-	</Page>
-
-</mvc:View>`;
-
-class ASTToSapui5XML {
-  private formatProcessor = FormatProcessor.Instance;
-
-  private convertChild(node: RootContent): void {
-    const processor = ProcessorFactory.getProcessor(node.type);
+  /**
+   * Converts an AST node into SAPUI5 XML by processing its placeholders.
+   * @param node - The AST node to process.
+   */
+  private processNode(node: RootContent): void {
+    const processor = this.processorFactory.getProcessor(node.type);
 
     if (processor) {
       const result = processor.processPlaceholders(node);
@@ -39,50 +36,50 @@ class ASTToSapui5XML {
       if (line !== undefined) {
         this.formatProcessor.addTemplate(line, result);
       }
-      return;
+    } else if ('children' in node && Array.isArray(node.children)) {
+      node.children.forEach((child) => this.processNode(child));
     }
-
-    const children = 'children' in node ? (node as Parent).children || [] : [];
-    children.forEach((child) => this.convertChild(child));
   }
 
-  public convert(content: Root): string {
-    content.children.forEach((child) => this.convertChild(child));
+  /**
+   * Converts the entire AST to SAPUI5 XML format.
+   * @param ast - The root AST node.
+   * @returns The formatted SAPUI5 XML.
+   */
+  public convert(ast: Root): string {
+    ast.children.forEach((child) => this.processNode(child));
 
-    const linkReferenceProcessor = ProcessorFactory.getProcessor(
+    this._resolveReferences();
+
+    const wrappedTemplates = this.formatProcessor.wrapTemplates();
+    return `${XML_TEMPLATE.top}\n${wrappedTemplates.join('\n')}\n${XML_TEMPLATE.bottom}`;
+  }
+
+  /**
+   * Resolves references (links, images, definitions) in the AST.
+   */
+  private _resolveReferences(): void {
+    const linkProcessor = this.processorFactory.getProcessor(
       'linkReference',
     ) as ReferenceProcessor;
-    const imageReferenceProcessor = ProcessorFactory.getProcessor(
+    const imageProcessor = this.processorFactory.getProcessor(
       'imageReference',
     ) as ReferenceProcessor;
-    const definitionProcessor = ProcessorFactory.getProcessor(
+    const definitionProcessor = this.processorFactory.getProcessor(
       'definition',
     ) as DefinitionProcessor;
 
     ProcessorUtils.resolveReferences(
-      linkReferenceProcessor.lineMap,
+      linkProcessor.lineMap,
       definitionProcessor.definitions,
       this.formatProcessor.templateMap,
     );
 
     ProcessorUtils.resolveReferences(
-      imageReferenceProcessor.lineMap,
+      imageProcessor.lineMap,
       definitionProcessor.definitions,
       this.formatProcessor.templateMap,
     );
-
-    const wrappedTemplates = this.formatProcessor.wrapTemplates();
-    return `${TOP_LIP}${wrappedTemplates.join('\n')}${BOTTOM_LIP}`;
-  }
-
-  public export(
-    content: string,
-    dirname: string = '../ui5-app/webapp/view',
-    filename: string = 'Main',
-    format: string = 'view.xml',
-  ): void {
-    const filePath: string = `${dirname}/${filename}.${format}`;
-    FileManager.saveAsFile(filePath, content);
   }
 }
 

@@ -2,12 +2,17 @@ import { Root } from 'mdast';
 import { remark } from 'remark';
 import remarkGfm from 'remark-gfm-configurable';
 import remarkParse from 'remark-parse';
-import FileManager from '../utils/FileManager.js';
 import Converter from './Converter.js';
 
+/**
+ * Converts Markdown content into an Abstract Syntax Tree (AST) using Remark.
+ */
 class MarkdownToASTConverter extends Converter<string, Root> {
-  public convert(content: string): Root {
-    const options = {
+  private readonly gfmOptions: Record<string, any>;
+
+  constructor(gfmOptions?: Record<string, any>) {
+    super();
+    this.gfmOptions = gfmOptions ?? {
       plugins: {
         table: true,
         footnote: true,
@@ -15,22 +20,23 @@ class MarkdownToASTConverter extends Converter<string, Root> {
       singleTilde: false,
       tableCellPadding: true,
     };
-
-    const astTree = remark()
-      .use(remarkParse)
-      .use(remarkGfm, options)
-      .parse(content) as Root;
-    return astTree;
   }
 
-  public export(
-    content: string,
-    dirname: string = 'src/resources',
-    filename: string = 'astTree',
-    format: string = 'json',
-  ) {
-    const filePath: string = `${dirname}/${filename}.${format}`;
-    FileManager.saveAsFile(filePath, content);
+  /**
+   * Converts a Markdown string into an AST representation.
+   * @param content - The Markdown content to be converted.
+   * @returns Parsed Markdown AST (mdast Root).
+   * @throws Error if parsing fails.
+   */
+  public convert(content: string): Root {
+    try {
+      return remark()
+        .use(remarkParse)
+        .use(remarkGfm, this.gfmOptions)
+        .parse(content) as Root;
+    } catch (error) {
+      throw new Error(`Markdown parsing failed: ${(error as Error).message}`);
+    }
   }
 }
 
