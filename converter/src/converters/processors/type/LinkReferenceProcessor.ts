@@ -1,6 +1,9 @@
 import { RootContent } from 'mdast';
 import ReferenceProcessor from './ReferenceProcessor.js';
 
+/**
+ * Processor for link reference nodes.
+ */
 class LinkReferenceProcessor extends ReferenceProcessor {
   protected extractAdditionalProperties(
     node: RootContent,

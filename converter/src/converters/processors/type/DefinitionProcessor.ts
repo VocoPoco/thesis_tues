@@ -1,9 +1,15 @@
 import { RootContent } from 'mdast';
 import Processor from './Processor.js';
 
+/**
+ * Processor for definition nodes.
+ */
 class DefinitionProcessor extends Processor {
   private _definitions: Map<string, string>;
 
+  /**
+   * Gets the definitions map.
+   */
   public get definitions(): Map<string, string> {
     return this._definitions;
   }

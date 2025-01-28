@@ -2,6 +2,9 @@ import { Parent, RootContent } from 'mdast';
 import ProcessorFactory from './../../ASTProcessorFactory.js';
 import Processor from './Processor.js';
 
+/**
+ * Processor for list item nodes.
+ */
 class ListItemProcessor extends Processor {
   public constructProperties(node: RootContent): Record<string, string> {
     return {
@@ -13,6 +16,12 @@ class ListItemProcessor extends Processor {
     return false;
   }
 
+  /**
+   * Processes child nodes of the list item.
+   *
+   * @param node - The parent node.
+   * @returns A string representation of the processed children.
+   */
   private processChildren(node: Parent): string {
     if (!node.children || node.children.length === 0) {
       return '<HBox></HBox>';
@@ -23,13 +32,12 @@ class ListItemProcessor extends Processor {
       return '<HBox></HBox>';
     }
 
-    const childrenContent = (node.children[0] as Parent).children
+    return firstChild.children
       .map((child) => {
         const processor = ProcessorFactory.getProcessor(child.type);
         return processor ? processor.processPlaceholders(child) : '';
       })
       .join('');
-    return `<HBox>${childrenContent}</HBox>`;
   }
 }
 

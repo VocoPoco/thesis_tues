@@ -1,22 +1,25 @@
 import { RootContent } from 'mdast';
 import Processor from './Processor.js';
 
+/**
+ * Abstract base class for processors handling reference nodes.
+ */
 abstract class ReferenceProcessor extends Processor {
-  protected _referenceMap: Map<string, string>;
-  protected _lineMap: Map<string, number>;
+  protected _referenceMap = new Map<string, string>();
+  protected _lineMap = new Map<string, number>();
 
+  /**
+   * Gets the reference map.
+   */
   public get referenceMap(): Map<string, string> {
     return this._referenceMap;
   }
 
+  /**
+   * Gets the line map.
+   */
   public get lineMap(): Map<string, number> {
     return this._lineMap;
-  }
-
-  constructor(template: string) {
-    super(template);
-    this._referenceMap = new Map();
-    this._lineMap = new Map();
   }
 
   public constructProperties(node: RootContent): Record<string, string> {
@@ -33,6 +36,12 @@ abstract class ReferenceProcessor extends Processor {
     return this.extractAdditionalProperties(node);
   }
 
+  /**
+   * Abstract method to extract additional properties specific to the reference type.
+   *
+   * @param node - The AST node to process.
+   * @returns Extracted properties for the node.
+   */
   protected abstract extractAdditionalProperties(
     node: RootContent,
   ): Record<string, string>;

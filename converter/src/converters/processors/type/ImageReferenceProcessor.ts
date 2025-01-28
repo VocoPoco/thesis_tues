@@ -1,6 +1,9 @@
 import { RootContent } from 'mdast';
 import ReferenceProcessor from './ReferenceProcessor.js';
 
+/**
+ * Processor for image reference nodes
+ */
 class ImageReferenceProcessor extends ReferenceProcessor {
   protected extractAdditionalProperties(
     node: RootContent,
