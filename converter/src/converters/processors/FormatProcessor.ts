@@ -75,6 +75,10 @@ class FormatProcessor {
    * @returns An array of wrapped templates in line order.
    */
   public wrapTemplates(): string[] {
+    if (this._templateMap.size === 0) {
+      return [];
+    }
+
     const wrappedResults: string[] = [];
     const keys = Array.from(this._templateMap.keys());
     const maxKey = Math.max(...keys);
