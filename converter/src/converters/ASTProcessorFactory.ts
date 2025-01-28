@@ -13,6 +13,10 @@ import TableProcessor from './processors/type/TableProcessor.js';
 import TableRowProcessor from './processors/type/TableRowProcessor.js';
 import TextProcessor from './processors/type/TextProcessor.js';
 
+/**
+ * Factory class to manage processors for different AST node types.
+ * Provides a centralized way to retrieve processors for converting AST nodes into SAPUI5-specific XML templates.
+ */
 class ProcessorFactory {
   private static processors: Record<string, Processor> = {
     heading: new HeadingProcessor('<Title level="{depth}" text="{value}"/>'),
@@ -51,8 +55,19 @@ class ProcessorFactory {
     definition: new DefinitionProcessor(''),
   };
 
+  /**
+   * Retrieves the processor for the given node type.
+   *
+   * @param type - The type of the AST node.
+   * @returns The corresponding processor instance.
+   * @throws {Error} If no processor is registered for the given type.
+   */
   public static getProcessor(type: string): Processor {
-    return this.processors[type];
+    const processor = this.processors[type];
+    if (!processor) {
+      throw new Error(`No processor registered for type: ${type}`);
+    }
+    return processor;
   }
 }
 
