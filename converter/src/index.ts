@@ -1,9 +1,9 @@
-import ASTToSapui5XML from '@src/converters/ASTToSapui5XML.js';
-import MarkdownToASTConverter from '@src/converters/MarkdownToAST.js';
-import FileManager from '@src/utils/FileManager.js';
 import assert from 'assert';
 import fs from 'fs';
 import path from 'path';
+import ASTToSapui5XML from './converters/ASTToSapui5XML.js';
+import MarkdownToASTConverter from './converters/MarkdownToAST.js';
+import FileManager from './utils/FileManager.js';
 
 /**
  * Converts a Markdown file to SAPUI5 XML.
@@ -40,7 +40,7 @@ export async function convertMarkdownToXml(
   const ast = await astConverter.convert(markdownContent);
   const xml = xmlConverter.convert(ast);
 
-  const xmlPath = path.join(outputDir, 'output.xml');
+  const xmlPath = path.join(outputDir, 'Main.view.xml');
 
   await FileManager.saveAsFile(xmlPath, xml);
 
