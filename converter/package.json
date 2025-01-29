@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "type": "module",
   "description": "A SAPUI5 library for generating user-end documentation from a md file",
-  "main": "src/main.ts",
+  "main": "src/index.ts",
   "scripts": {
     "build": "tsc",
-    "start": "npm run build && node dist/src/main.js",
+    "start": "npm run build && node dist/src/index.js",
     "lint-fix": "eslint --fix .",
     "lint": "eslint src",
     "test": "jest"
@@ -44,6 +44,7 @@
     "remark-gfm-configurable": "^1.0.0",
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
+    "tsconfig-paths": "^4.2.0",
     "unified": "^11.0.0"
   }
 }

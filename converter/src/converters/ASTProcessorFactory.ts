@@ -1,3 +1,4 @@
+import CodeProcessor from './processors/type/CodeProcessor.js';
 import DefinitionProcessor from './processors/type/DefinitionProcessor.js';
 import HeadingProcessor from './processors/type/HeadingProcessor.js';
 import ImageProcessor from './processors/type/ImageProcessor.js';
@@ -30,9 +31,9 @@ class ProcessorFactory {
     delete: new SpecialTextProcessor(
       '  <FormattedText htmlText="&lt;s>My Column&lt;/s>" />',
     ),
-    // code: new CodeProcessor(
-    //   '<code:CodeEditor editable="false" lineNumbers="false" type="{lang}" value="{value}" />',
-    // ),
+    code: new CodeProcessor(
+      '<code:CodeEditor editable="false" lineNumbers="false" type="{lang}" value="{value}" />',
+    ),
     thematicBreak: new StaticProcessor("<ToolBar width='100%' height='1px'/>"),
     link: new LinkProcessor(
       '<Link text="{value}" href="{url}" tooltip="{title}"/>',
@@ -63,11 +64,7 @@ class ProcessorFactory {
    * @throws {Error} If no processor is registered for the given type.
    */
   public static getProcessor(type: string): Processor {
-    const processor = this.processors[type];
-    if (!processor) {
-      throw new Error(`No processor registered for type: ${type}`);
-    }
-    return processor;
+    return this.processors[type];
   }
 }
 
