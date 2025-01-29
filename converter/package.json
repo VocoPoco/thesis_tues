@@ -1,9 +1,11 @@
 {
-  "name": "thesis_tues",
+  "name": "md-to-sapui5-xml",
   "version": "1.0.0",
   "type": "module",
-  "description": "A SAPUI5 library for generating user-end documentation from a md file",
-  "main": "src/index.ts",
+  "description": "Convert Markdown to SAPUI5 XML",
+  "main": "dist/src/index.ts",
+  "types": "dist/src/index.d.ts",
+  "module": "dist/src/index.js",
   "scripts": {
     "build": "tsc",
     "start": "npm run build && node dist/src/index.js",
@@ -11,9 +13,14 @@
     "lint": "eslint src",
     "test": "jest"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "markdown",
+    "sapui5",
+    "converter",
+    "xml"
+  ],
+  "author": "VocoPoco <vik.penev@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
     "@eslint/js": "^9.15.0",
     "@types/jest": "^29.5.14",
@@ -46,5 +53,14 @@
     "remark-stringify": "^11.0.0",
     "tsconfig-paths": "^4.2.0",
     "unified": "^11.0.0"
+  },
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VocoPoco/thesis_tues"
   }
 }

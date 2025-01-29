@@ -9,6 +9,7 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "baseUrl": ".",
+    "declarationMap": true,
     "rootDirs": ["./src", "./test"],
     "paths": {
       "@src/*": ["src/*"]
