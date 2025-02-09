@@ -45,3 +45,7 @@ jest --selectProjects e2e
 
 or all tests with:
 jest
+
+needs fixing:
+
+- in src dir importing of files with ./../.. to a path in ts
