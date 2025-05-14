@@ -1,0 +1,9 @@
+{
+  "paths": {
+    "markdownFilePath": "./webapp/data/md.md",
+    "documentationViewPath": "./webapp/view/Main.view.xml",
+    "navigationFragmentPath": "./webapp/view/NavigationFragment.fragment.xml",
+    "navigationControllerPath": "./webapp/controller/Main.controller.ts"
+  },
+  "withNav": false
+}
