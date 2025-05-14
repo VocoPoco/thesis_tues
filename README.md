@@ -1,51 +1,98 @@
-# thesis_tues
+# 📘 UI5 Documentation Showcase App
 
-A SAPUI5 library for generating user-end documentation from a md file
+This project is a **UI5 application** designed to display Markdown-generated documentation views.  
+It uses the [`md-to-sapui5-xml`](https://www.npmjs.com/package/md-to-sapui5-xml) CLI tool to convert a Markdown file into a SAPUI5 XML View and renders it dynamically inside the app.
 
-Markdown file >> AST file >>
+---
 
-use babel, webpack or
+## 🎯 Purpose
 
-Benefits of Using Webpack
-Customizable Module Resolution:
+The purpose of this project is to:
 
-Webpack's resolve configuration allows you to define how modules are found and resolved.
-You can specify directories to search for modules, file extensions to resolve, and aliases for path simplification.
-Transpilation Support:
+- Showcase how Markdown content can be transformed into fully functional SAPUI5 XML views
+- Serve as a live preview environment for testing `md-to-sapui5-xml`
+- Demonstrate how dynamic documentation can be embedded into real UI5 apps using CLI-based pipelines
 
-With ts-loader, Webpack can transpile your TypeScript code into JavaScript, handling any necessary transformations.
-Bundling and Optimization:
+---
 
-Webpack can bundle your application into a single file or split it into chunks, optimizing for performance.
-Compatibility with Modern Dependencies:
+## 🚀 How to Run This App
 
-Webpack handles both ES Modules and CommonJS modules, allowing you to use the latest versions of dependencies like unified and remark-parse.
-Avoiding File Extensions in Imports:
+### 1. Navigate to the app folder
 
-By configuring the extensions option, you can import modules without specifying file extensions.
+From the root of the project, change directory into the UI5 app:
 
-[arbitrary case-insensitive reference text]: https://www.mozilla.org
+```bash
+cd ui5-app
+```
 
-[I'm a reference-style link][Arbitrary case-insensitive reference text]
+---
 
-TABLES NEED TO HANDLE DIFFERENT TYPES AFTER THE LINE MMODIFICATION BECAUSE IT BREAKS.
+### 2. Generate the Documentation View
 
-- if there is a type that i do not support (linkReferece, footnote, imageReference) in the tables, the whole conversion breaks - NEEDS FIXING
+This step transforms your Markdown into a SAPUI5-compatible XML view.
 
-WORK LEFT TO DO:
+```bash
+npm run generate-documentation
+```
 
-- fix languages in codeEditor because some are configured different between markdown and sapui5 for instance (c# (.md) == csharp)
-- tests
-- navigation menu (optional)
+> 🛠 This command will run `md-to-sapui5-xml` using the config file located in `ui5-app/md-to-sapui5.config.json`.
 
-run tests with:
-jest --selectProjects unit
-jest --selectProjects integration
-jest --selectProjects e2e
+It will generate:
 
-or all tests with:
-jest
+- A view at `webapp/view/Main.view.xml`
+- Optionally, navigation fragments if `withNav` is enabled
 
-needs fixing:
+---
 
-- in src dir importing of files with ./../.. to a path in ts
+### 3. Start the App
+
+Once the view is generated, launch the local development server:
+
+```bash
+npm run start
+```
+
+Then visit:
+
+```
+http://localhost:8080/index.html
+```
+
+> 🔍 You should see the rendered SAPUI5 documentation view, styled and navigable just like a native UI5 screen.
+
+---
+
+## 📁 Project Structure (Relevant Parts)
+
+```
+ui5-app/
+├── webapp/
+│   ├── controller/
+│   │   └── Main.controller.ts
+│   ├── view/
+│   │   ├── Main.view.xml          # ← Generated view
+│   │   └── NavigationFragment.fragment.xml (optional)
+│   ├── data/
+│   │   └── md.md                  # ← Markdown input
+├── md-to-sapui5.config.json       # ← CLI config
+├── package.json
+```
+
+---
+
+## 📦 Available NPM Scripts
+
+| Script                           | Description                                                 |
+| -------------------------------- | ----------------------------------------------------------- |
+| `npm run generate-documentation` | Runs the `md-to-sapui5-xml` CLI to generate the SAPUI5 view |
+| `npm run start`                  | Starts the local UI5 development server using UI5 tooling   |
+
+---
+
+## 🧠 Tips
+
+- You can edit `webapp/data/md.md` to test different Markdown inputs.
+- Toggle `withNav` in the config file to enable or disable the side navigation.
+- If you run into caching issues, try clearing the `Main.view.xml` before regenerating it.
+
+---
